@@ -1,0 +1,28 @@
+h1 {
+    color: #22bc22;
+    text-align: left;
+}
+
+.warning{
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+.card{
+margin-left:410px;
+margin-top: 20px;
+color: #fff;
+}
+.container{
+font-weight: bold;
+padding-bottom:10px;
+border-radius: 15px;
+}
+
+#navbarown{
+    background-color: #228c22 !important;
+}
+
+body , #midcard{
+    background: #ffffff !important;
+}
