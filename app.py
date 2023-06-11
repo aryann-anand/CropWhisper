@@ -12,19 +12,19 @@ loaded_model = pickle.load(open("model.pkl", 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    N = int(request.form['Nitrogen'])
-    P = int(request.form['Phosporus'])
-    K = int(request.form['Potassium'])
+    nitrogen = int(request.form['Nitrogen'])
+    phosphorus = int(request.form['Phosporus'])
+    potassium = int(request.form['Potassium'])
     temp = float(request.form['Temperature'])
     humidity = float(request.form['Humidity'])
     ph = float(request.form['pH'])
     rainfall = float(request.form['Rainfall'])
 
-    feature_list = [N, P, K, temp, humidity, ph, rainfall]
+    feature_list = [nitrogen, phosphorus, potassium, temp, humidity, ph, rainfall]
     single_pred = np.array(feature_list).reshape(1, -1)
 
     prediction = loaded_model.predict(single_pred)
